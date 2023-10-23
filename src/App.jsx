@@ -1,17 +1,14 @@
+import { useState } from 'react';
 import './App.css'
+import GetCoordinates from './components/GetCoordinates';
+
+
 
 function App() {
-  navigator.geolocation.getCurrentPosition(position => {
-    console.log(position.coords.latitude, position.coords.longitude);
-  });
-
-
-
-
 
   return (
     <>
-      <header>
+      {/* <header>
         <nav>
           <div className="searchContainer">
             <input type="text" placeholder='Busca una ciudad' />
@@ -23,13 +20,9 @@ function App() {
           </div>
         </nav>
       </header>
-      <main>
-        <div className="left">
-          <h1 className='mainWeatherFont'>30 C</h1>
-          <span>☀️</span>
-          <h3 className='mainCityFont'>Ciudad de México</h3>
-        </div>
-        <div className='right'>
+      <main> */}
+      <GetCoordinates />
+      {/* <div className='right'>
           <ul>
             <li>
               <p>Madrid</p>
@@ -49,7 +42,7 @@ function App() {
             </li>
           </ul>
         </div>
-      </main>
+      </main> */}
     </>
   )
 }
@@ -70,4 +63,4 @@ export default App
 //componentes
 
 
-//API key: 5a8c226189094d71c9d4cdd8e366f881
+//
