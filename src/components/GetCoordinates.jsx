@@ -29,7 +29,7 @@ const GetCoordinates = () => {
       {weatherData ?
         <div>
           <h1>{Math.round(weatherData.main.temp)}ºC</h1>
-          <img src={weatherData.weather[0].icon} alt={weatherData.weather[0].description} />
+          <img src={`http://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`} alt={weatherData.weather[0].description} />
           <h2>{weatherData.sys.country}: {weatherData.name}</h2>
         </div>
         :
@@ -43,5 +43,4 @@ const GetCoordinates = () => {
 export default GetCoordinates
 
 
-//  let weatherURL = `https://api.openweathermap.org/data/2.5/weather?${latitude}&${longitude}&appid=${API_KEY}&units=metric`
 
