@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css'
 import GetCoordinates from './components/GetCoordinates';
+import FiveCities from './components/FiveCities';
 
 
 
@@ -8,47 +9,21 @@ function App() {
 
   return (
     <>
-      {/* <header>
-        <nav>
-          <div className="searchContainer">
-            <input type="text" placeholder='Busca una ciudad' />
-          </div>
-          <div className="navButtons">
-            <button>Días</button>
-            <button>Ciudades</button>
-            <button>Light Mode, dark mode</button>
-          </div>
-        </nav>
-      </header>
-      <main> */}
       <GetCoordinates />
-      {/* <div className='right'>
-          <ul>
-            <li>
-              <p>Madrid</p>
-              Lunes: 5C
-            </li>
-            <li>
-              Martes 5C
-            </li>
-            <li>
-              Miercoles 5C
-            </li>
-            <li>
-              Juevs 5C
-            </li>
-            <li>
-              Viernes 5C
-            </li>
-          </ul>
-        </div>
-      </main> */}
+      <FiveCities />
     </>
   )
 }
 
 export default App
 
+
+
+//1 carga la pagina hay un mensaje de que se necesita usar la ubicación para funcionar
+//2 el estado de la ubicación se guarda en el useContext porque lo utilizara mainPage y localFiveDays
+//3 componente buscar ciudad tiene un input que busca zonas por nombre
+// 4 componente select que muestra el clima de 5 ciudades
+// 5 componente que muestra cinco dias a futuro de nuestra ubicacion
 
 //Objetivos:
 //1 Al cargar la pagina se obtiene la longitud y latidud para mostrar el clima local
@@ -60,7 +35,3 @@ export default App
 //7 se carga un loader "cargando..." mientras se descargan los datos de la api
 //8 si no das permiso se muestra un mensaje que es necesario activiar la geolocalizacion para que funcione el app
 
-//componentes
-
-
-//
