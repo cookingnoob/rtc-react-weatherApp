@@ -1,5 +1,11 @@
 import React from 'react'
 
+//este componente crea un render que muestra el clima actual de la informacion que se le pasa
+
+//7 se carga un loader "cargando..." mientras se descargan los datos de la api
+//5 se ve un icono de soleado, nublado, lluvioso...
+//8 si no das permiso se muestra un mensaje que es necesario activiar la geolocalizacion para que funcione el app
+
 const ActualWeather = ({ weatherData }) => {
   return (
     <div className='mainPage'>
@@ -11,8 +17,7 @@ const ActualWeather = ({ weatherData }) => {
           </h2>
         </div>
         :
-        <p>Necesitamos cargar tu localización para funcionar</p>}
-      <button onClick={getLocation}>Obtener información</button>
+        <p>Hubo un error...</p>}
     </div>
   )
 }
