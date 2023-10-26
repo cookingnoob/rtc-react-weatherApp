@@ -33,3 +33,21 @@ body{
   font-size: 10vh;
   margin: 0;
 }
+.fiveDaysContainer{
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: auto;
+  width: 50vw;
+  height: 90vh;
+  gap: 10px;
+}
+.singleContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+.singleContainer > p{
+  font-size: 12px;
+}
