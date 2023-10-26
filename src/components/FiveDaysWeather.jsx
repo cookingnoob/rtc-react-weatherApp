@@ -1,38 +1,8 @@
 import React, { useEffect, useState } from 'react'
+import useAPI from '../hooks/useAPI'
 
 const FiveDaysWeather = () => {
-  const [localWeatherData, setLocalWeatherData] = useState(null);
-  const [texto, setTexto] = useState('Obteniendo tu ubicación');
-
-  const API_KEY = '5a8c226189094d71c9d4cdd8e366f881';
-
-  useEffect(() => {
-
-    async function success(position) {
-      try {
-        const response = await fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${API_KEY}&units=metric`);
-        const data = await response.json()
-
-        setLocalWeatherData(data)
-        console.log(data)
-      } catch {
-        setTexto('No se pudo obtener información del clima')
-      }
-    }
-
-    function error() {
-      setTexto('No se pudo obtener tu ubicación')
-    }
-
-    if (!navigator.geolocation) {
-      setTexto('Tu navegador no tiene soporte para la geolocalización')
-    } else {
-      navigator.geolocation.getCurrentPosition(success, error);
-    }
-
-    // const whatDayIsIt = new Date('2023-10-25').toLocaleDateString('es-ES', { weekday: 'long' })
-    // console.log(whatDayIsIt)
-  }, [])
+  const { localWeatherData, texto } = useAPI({ url: 'http://api.openweathermap.org/data/2.5/forecast?' })
   return (
     <>
       {localWeatherData ?
@@ -40,6 +10,7 @@ const FiveDaysWeather = () => {
           {localWeatherData.list.map(day => (
             <div key={day.dt} className='singleContainer'>
               <img src={`http://openweathermap.org/img/w/${day.weather[0].icon}.png`} alt={day.weather[0].description} />
+              <p>{new Date(day.dt_txt).toLocaleDateString('es-ES', { weekday: 'long' })}</p>
               <p>{day.dt_txt.split(' ')[1].substring(0, 2)}</p>
               <p>{Math.round(day.main.temp)}ºC</p>
             </div>
@@ -60,7 +31,7 @@ export default FiveDaysWeather
 
 
 
-
+//por cada fecha crear un numero de dia, si ese dia ya existe se agrupa
 
 
 
