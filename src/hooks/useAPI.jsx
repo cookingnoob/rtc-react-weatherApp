@@ -6,10 +6,13 @@ const useAPI = ({ url }) => {
   const API_KEY = '5a8c226189094d71c9d4cdd8e366f881';
 
   useEffect(() => {
-
     async function success(position) {
+      let endPoint;
+      if (url === 'https://api.openweathermap.org/data/2.5/weather?' || url === 'http://api.openweathermap.org/data/2.5/forecast?') {
+        endPoint = `${url}lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${API_KEY}&units=metric`
+      }
       try {
-        const response = await fetch(`${url}lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${API_KEY}&units=metric`);
+        const response = await fetch(endPoint);
         const data = await response.json()
         setLocalWeatherData(data)
       } catch {
