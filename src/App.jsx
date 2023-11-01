@@ -3,6 +3,7 @@ import './App.css'
 
 import FiveDaysWeather from './components/FiveDaysWeather';
 import ActualLocalWeather from './components/ActualLocalWeather';
+import SelectLoc from './components/SelectLoc';
 
 
 function App() {
@@ -13,8 +14,9 @@ function App() {
   return (
     <>
       <div className="home">
-        <FiveDaysWeather />
-        <ActualLocalWeather />
+        {/* <ActualLocalWeather />
+        <FiveDaysWeather /> */}
+        <SelectLoc />
       </div>
     </>
   )
