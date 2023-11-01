@@ -14,9 +14,9 @@ function App() {
   return (
     <>
       <div className="home">
-        {/* <ActualLocalWeather />
-        <FiveDaysWeather /> */}
-        <SelectLoc />
+        <ActualLocalWeather />
+        <FiveDaysWeather />
+        {/* <SelectLoc /> */}
       </div>
     </>
   )
