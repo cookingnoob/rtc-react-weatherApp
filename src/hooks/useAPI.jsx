@@ -1,32 +1,45 @@
 import React, { useEffect, useState } from 'react'
-import useLocation from './useLocation';
 
 const useAPI = ({ url }) => {
-  const [localWeatherData, setLocalWeatherData] = useState(null);
+  const [weatherData, setWeatherData] = useState(null);
+
   const [texto, setTexto] = useState('Obteniendo tu ubicación');
+
+
   const API_KEY = '5a8c226189094d71c9d4cdd8e366f881';
-  const { longitude, latitude } = useLocation()
 
   useEffect(() => {
-    const fetchData = async () => {
+
+    const success = async (position) => {
       try {
-        const response = await fetch(`${url}lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`);
+        console.log(position)
+        const response = await fetch(`${url}lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${API_KEY}&units=metric`);
+
         const data = await response.json()
-        setLocalWeatherData(data)
-        console.log(data[0].lat, data[0].lon)
-      } catch {
+
+        setWeatherData(data)
+
+      } catch (error) {
+        console.log(error)
         setTexto('No se pudo obtener información del clima')
       }
     }
-    if (latitude && longitude) {
-      fetchData();
+    function error() {
+      setTexto('No se pudo obtener tu ubicación')
     }
+
+    if (!navigator.geolocation) {
+      setTexto('Tu navegador no tiene soporte para la geolocalización')
+    } else {
+      navigator.geolocation.getCurrentPosition(success, error);
+    }
+
   }, [])
   return (
-    { localWeatherData, texto }
+    { weatherData, texto }
   )
 }
 
 export default useAPI
 
-// http://api.openweathermap.org/geo/1.0/direct?q=Madrid&appid=5a8c226189094d71c9d4cdd8e366f881&units=metric&appid=5a8c226189094d71c9d4cdd8e366f881&units=metric
+// // http://api.openweathermap.org/geo/1.0/direct?q=Madrid&appid=5a8c226189094d71c9d4cdd8e366f881&units=metric&appid=5a8c226189094d71c9d4cdd8e366f881&units=metric
