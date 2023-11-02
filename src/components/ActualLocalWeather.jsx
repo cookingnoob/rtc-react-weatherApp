@@ -1,8 +1,8 @@
 import React from 'react'
 import useAPI from '../hooks/useAPI'
 
-const ActualLocalWeather = () => {
-  const { weatherData, texto } = useAPI({ url: 'https://api.openweathermap.org/data/2.5/weather?' })
+const ActualLocalWeather = ({ latitude, longitude }) => {
+  const { weatherData, texto } = useAPI({ url: 'https://api.openweathermap.org/data/2.5/weather?', latitude, longitude })
 
   return (
     <div className='mainPage'>

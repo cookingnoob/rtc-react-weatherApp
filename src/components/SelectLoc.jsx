@@ -1,21 +1,28 @@
-// import React, { useState } from 'react'
-// import useAPI from '../hooks/useAPI'
+import React, { useState } from 'react'
+import useAPI from '../hooks/useAPI'
 
-// const SelectLoc = () => {
-//   const [city, setCity] = useState('Tu ciudad')
+const SelectLoc = () => {
+  const [city, setCity] = useState(null)
 
-//   return (
-//     <>
-//     <select name="City">
-//       <option value="Madrid">Madrid</option>
-//       <option value="Paris" selected>París</option>
-//       <option value="Berlin">Berlín</option>
-//     </select>
-//     </>
-//   )
-// }
+  const handleSelect = (event) => {
+    setCity(event.target.value)
+    console.log(city)
+  }
 
-// export default SelectLoc
+  return (
+    <>
+      <select name="City" defaultValue={null} onChange={handleSelect}>
+        <option value={null}>-</option>
+        <option value="Madrid">Madrid</option>
+        <option value="Paris">París</option>
+        <option value="Berlin">Berlín</option>
+        <option value="London">Londres</option>
+      </select>
+    </>
+  )
+}
+
+export default SelectLoc
 
 
 

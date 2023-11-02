@@ -5,3 +5,12 @@
 //pasamos la informacion al componente para obtener la informacion actual de esa ubicacion
 //Se muestra el clima de los proximos 5 dias intervalos de 3 horas
 //La ciudad seleccionada lanza otro fetch a la url de 5 dias cada 3 horas
+import React from 'react'
+
+const SelectedCities = () => {
+  return (
+    <div>SelectedCities</div>
+  )
+}
+
+export default SelectedCities

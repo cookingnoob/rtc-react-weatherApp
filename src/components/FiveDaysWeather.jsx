@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import useAPI from '../hooks/useAPI'
 
-const FiveDaysWeather = () => {
-  const { weatherData, texto } = useAPI({ url: 'http://api.openweathermap.org/data/2.5/forecast?' })
+
+const FiveDaysWeather = ({ latitude, longitude }) => {
+
+  const { weatherData, texto } = useAPI({ url: 'http://api.openweathermap.org/data/2.5/forecast?', latitude, longitude })
   return (
     <>
       {weatherData ?
