@@ -1,16 +1,23 @@
+import { NavLink, Outlet } from 'react-router-dom';
 import './App.css'
-import SelectLoc from './components/SelectLoc';
+
 import Home from './pages/Home';
 import SelectedCities from './pages/SelectedCities';
-
 
 function App() {
   return (
     <>
-      <div className="home">
-        {/* <Home /> */}
-        <SelectedCities />
-      </div>
+      <header>
+        <h1>Aplicación del clima</h1>
+      </header>
+      <nav>
+        <NavLink to="">Home</NavLink>
+        <br />
+        <NavLink to="select">Selected cities</NavLink>
+      </nav>
+      <main>
+        <Outlet />
+      </main>
     </>
   )
 }
