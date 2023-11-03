@@ -1,18 +1,15 @@
-import { useEffect, useState } from 'react';
 import './App.css'
-import ActualLocalWeather from './components/ActualLocalWeather';
-import FiveDaysWeather from './components/FiveDaysWeather';
 import SelectLoc from './components/SelectLoc';
 import Home from './pages/Home';
+import SelectedCities from './pages/SelectedCities';
 
 
 function App() {
-  const [city, setCity] = useState(null)
-
   return (
     <>
       <div className="home">
-        <Home />
+        {/* <Home /> */}
+        <SelectedCities />
       </div>
     </>
   )

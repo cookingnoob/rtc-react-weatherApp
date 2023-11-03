@@ -1,15 +1,40 @@
-//ciudades predefinidas: 
-//Hay un select tiene 5 opciones de ciudad
-//Al seleccionar una ciudad se actualiza el estado (por defecto el estado es Londres)
-//el estado activa useEffect y lanza un fetch
-//pasamos la informacion al componente para obtener la informacion actual de esa ubicacion
-//Se muestra el clima de los proximos 5 dias intervalos de 3 horas
-//La ciudad seleccionada lanza otro fetch a la url de 5 dias cada 3 horas
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import ActualLocalWeather from '../components/ActualLocalWeather';
+import FiveDaysWeather from '../components/FiveDaysWeather';
 
 const SelectedCities = () => {
+  const [city, setCity] = useState('Madrid')
+  const [latitude, setLatitude] = useState('');
+  const [longitude, setLongitude] = useState('')
+
+  useEffect(() => {
+    const getCityLocation = async () => {
+      const response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=5a8c226189094d71c9d4cdd8e366f881&units=metric&appid=5a8c226189094d71c9d4cdd8e366f881&units=metric`)
+      const data = await response.json()
+      setLatitude(data[0].lat)
+      setLongitude(data[0].lon)
+    }
+    getCityLocation()
+  }, [city])
+
+  const handleSelect = (event) => {
+    setCity(event.target.value)
+  }
   return (
-    <div>SelectedCities</div>
+    <>
+      <select name="City" onChange={handleSelect}>
+        <option value="Madrid">Madrid</option>
+        <option value="Paris">París</option>
+        <option value="Berlin">Berlín</option>
+        <option value="London">Londres</option>
+      </select>
+      {latitude && longitude ?
+        <>
+          <ActualLocalWeather latitude={latitude} longitude={longitude} />
+          <FiveDaysWeather latitude={latitude} longitude={longitude} />
+        </> :
+        <p>Cargando información...</p>}
+    </>
   )
 }
 
