@@ -23,7 +23,7 @@ const Home = () => {
     } else {
       navigator.geolocation.getCurrentPosition(success, error);
     }
-  }, [latitude, longitude])
+  }, [])
 
   return (
     <>
