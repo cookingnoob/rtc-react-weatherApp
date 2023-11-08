@@ -15,8 +15,8 @@ const FiveDaysWeather = ({ latitude, longitude }) => {
             <div key={day.dt} className='singleContainer'>
               <img src={`http://openweathermap.org/img/w/${day.weather[0].icon}.png`} alt={day.weather[0].description} />
               <p>{new Date(day.dt_txt).toLocaleDateString('es-ES', { weekday: 'long' })}</p>
-              <p>{day.dt_txt.split(' ')[1].substring(0, 2)}</p>
-              <p>{Math.round(day.main.temp)}ºC</p>
+              {/* <p>{day.dt_txt.split(' ')[1].substring(0, 2)}</p> */}
+              {/* <p>{Math.round(day.main.temp)}ºC</p> */}
               <ChangeTempColor temp={Math.round(day.main.temp)} />
             </div>
           ))

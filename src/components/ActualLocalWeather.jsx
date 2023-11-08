@@ -10,11 +10,11 @@ const ActualLocalWeather = ({ latitude, longitude }) => {
     <div className='mainPage'>
       {weatherData ?
         <div>
-          <h1>{Math.round(weatherData.main.temp)}ºC</h1>
+          <ChangeTempColor temp={Math.round(weatherData.main.temp)} tag="h1" />
           <h2>{weatherData.sys.country}: {weatherData.name}
             <span><img src={`http://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`} alt={weatherData.weather[0].description} /></span>
           </h2>
-          <ChangeTempColor temp={Math.round(weatherData.main.temp)} />
+
         </div>
         :
         <p>{texto}</p>}

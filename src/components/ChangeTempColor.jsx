@@ -1,21 +1,25 @@
 import React from 'react'
+import '../App.css'
 
-const ChangeTempColor = ({ temp }) => {
-  console.log(temp)
-  if (temp < 5) {
-    console.log('helado')
-  } else if (temp > 28) {
-    console.log('caliente')
-  } else if (temp > 20) {
-    console.log('templado')
-  }
-  else if (temp > 10) {
-    console.log('frio')
-  }
+const ChangeTempColor = ({ temp, tag }) => {
+  const getTemperatureClass = (temp) => {
+    if (temp < 5) {
+      return 'temp-cold';
+    } else if (temp > 28) {
+      return 'temp-hot';
+    } else if (temp > 20) {
+      return 'temp-mild';
+    } else if (temp > 10) {
+      return 'temp-chill';
+    } else {
+      return 'temp-default';
+    }
+  };
 
-  return (
-    <div></div>
-  )
-}
+  const className = getTemperatureClass(temp)
+  const TagName = tag || 'p';
+
+  return React.createElement(TagName, { className: className }, `${temp}ºC`);
+};
 
 export default ChangeTempColor
