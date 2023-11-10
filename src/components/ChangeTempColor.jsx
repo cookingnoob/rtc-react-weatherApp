@@ -1,25 +1,12 @@
 import React from 'react'
 import '../App.css'
+import lluvia from '../assets/dia-lluvio.png'
 
-const ChangeTempColor = ({ temp, tag }) => {
-  const getTemperatureClass = (temp) => {
-    if (temp < 5) {
-      return 'temp-cold';
-    } else if (temp > 28) {
-      return 'temp-hot';
-    } else if (temp > 20) {
-      return 'temp-mild';
-    } else if (temp > 10) {
-      return 'temp-chill';
-    } else {
-      return 'temp-default';
-    }
-  };
+const ChangeTempColor = ({ weather }) => {
 
-  const className = getTemperatureClass(temp)
-  const TagName = tag || 'p';
 
-  return React.createElement(TagName, { className: className }, `${temp}ºC`);
+
+  return <img className='main-image' src={lluvia}></img>
 };
 
 export default ChangeTempColor

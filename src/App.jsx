@@ -8,13 +8,12 @@ function App() {
   return (
     <>
       <header>
-        <h1>Aplicación del clima</h1>
+        <nav>
+          <NavLink to="" className={'navLink'}>Home</NavLink>
+          <br />
+          <NavLink to="select" className={'navLink'}>Selected cities</NavLink>
+        </nav>
       </header>
-      <nav>
-        <NavLink to="">Home</NavLink>
-        <br />
-        <NavLink to="select">Selected cities</NavLink>
-      </nav>
       <main>
         <Outlet />
       </main>
