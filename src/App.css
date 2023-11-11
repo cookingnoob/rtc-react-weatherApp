@@ -7,3 +7,31 @@ body{
   width: 100vw;
   margin: 0;
 }
+nav{
+  background-color: aqua;
+  height: 10vh;
+}
+.mainPage{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.mainPage > h1,
+.mainPage > h2{
+  color: blanchedalmond;
+  margin: 0;
+  padding: 0;
+  z-index: 1;
+  position: relative;
+}
+.mainPage > h1{
+  font-family: fedroka;
+  font-size: 70vh;
+}
+.main-image{
+  position: absolute;
+  height: 90vh;
+}
