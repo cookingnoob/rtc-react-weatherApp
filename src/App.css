@@ -23,7 +23,7 @@ nav{
 .navLink{
   text-decoration: none;
   color: black;
-  font-size: 1vw;
+  font-size: clamp(30px, 1vw, 1.5vw);
 }
 .navLink:hover{
   background-color: black;
@@ -31,6 +31,7 @@ nav{
 }
 .mainPage{
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 0;
@@ -47,28 +48,41 @@ nav{
 }
 .mainPage > h1{
   font-family: fedroka;
-  font-size: 70vh;
+  font-size: clamp(30vw, 50vw, 70vw);
 }
 .main-image{
   position: absolute;
   height: 90vh;
+  width: 100%;
   opacity: 80%;
 }
 .forecast{
   height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  background: rgb(34,193,195);
-  background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+  justify-content: flex-end;
 }
+.forecastImg{
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  z-index: 0;
+  opacity: 70%;
+}
+.forecastTitle{
+  font-size: 15vw;
+  z-index: 1;
+  margin: 0;
+}
+
 .fiveDaysContainer{
-  height: 20vh;
-  width: 50vw;
+  height: 30vh;
+  width: 70vw;
   overflow-y: hidden;
   overflow-x: auto;
   display: flex;
-  gap: 10px;
+  z-index: 1;
 }
 .singleContainer{
   border-right: 1px solid black;
@@ -76,12 +90,32 @@ nav{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: aliceblue;
+  padding: 40px;
+  z-index: 100;
 }
 .singleContainer > p{
-  font-size: 2vw;
-
+  font-size: clamp(30px, 1vw, 1vw);;
 }
-.singleContainer >img{
-
+.selectContainer{
+  position: fixed;
+  left: 50%;
+  top: 6%;
+  z-index: 2;
+  margin-bottom: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(240, 236, 236, 0.674);
+}
+select{
+  border: none;
+  color: black;
+  font-size: clamp(30px, 1vw, 1vw);
+  background-color: rgba(240, 236, 236, 0.674);
+  margin-top: 5px;
+}
+select:hover{
+  cursor: pointer;
+  background-color: black;
+  color: whitesmoke;
 }
