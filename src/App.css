@@ -6,10 +6,28 @@ body{
   height: 100vh;
   width: 100vw;
   margin: 0;
+  box-sizing: border-box;
 }
 nav{
-  background-color: aqua;
   height: 10vh;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  margin-bottom: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  
+}
+.navLink{
+  text-decoration: none;
+  color: black;
+  font-size: 1vw;
+}
+.navLink:hover{
+  background-color: black;
+  color: whitesmoke;
 }
 .mainPage{
   display: flex;
@@ -17,11 +35,11 @@ nav{
   align-items: center;
   margin: 0;
   padding: 0;
-  position: relative;
+  height: 90vh;
 }
 .mainPage > h1,
 .mainPage > h2{
-  color: blanchedalmond;
+  color: rgb(232, 228, 230);
   margin: 0;
   padding: 0;
   z-index: 1;
@@ -34,4 +52,5 @@ nav{
 .main-image{
   position: absolute;
   height: 90vh;
+  opacity: 80%;
 }
