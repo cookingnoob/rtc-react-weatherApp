@@ -18,7 +18,7 @@ nav{
   justify-content: center;
   align-items: center;
   gap: 40px;
-  
+  background-color: rgba(240, 236, 236, 0.674);
 }
 .navLink{
   text-decoration: none;
@@ -39,7 +39,7 @@ nav{
 }
 .mainPage > h1,
 .mainPage > h2{
-  color: rgb(232, 228, 230);
+  color: rgb(6, 6, 6);
   margin: 0;
   padding: 0;
   z-index: 1;
@@ -53,4 +53,35 @@ nav{
   position: absolute;
   height: 90vh;
   opacity: 80%;
+}
+.forecast{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(34,193,195);
+  background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+}
+.fiveDaysContainer{
+  height: 20vh;
+  width: 50vw;
+  overflow-y: hidden;
+  overflow-x: auto;
+  display: flex;
+  gap: 10px;
+}
+.singleContainer{
+  border-right: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: aliceblue;
+}
+.singleContainer > p{
+  font-size: 2vw;
+
+}
+.singleContainer >img{
+
 }

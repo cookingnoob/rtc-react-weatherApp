@@ -29,8 +29,12 @@ const Home = () => {
     <>
       {latitude && longitude ?
         <>
+        <section>
           <ActualLocalWeather latitude={latitude} longitude={longitude} />
+          </section> 
+        <section className='forecast'>
           <FiveDaysWeather latitude={latitude} longitude={longitude} />
+          </section>
         </> :
         <p>{texto}</p>}
     </>

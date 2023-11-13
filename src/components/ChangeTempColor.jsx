@@ -10,7 +10,7 @@ import nieve from '../assets/nieve.png'
 
 
 const ChangeTempColor = ({ weather }) => {
-  const [image, setImage] = useState(planeta);
+  const [image, setImage] = useState();
 
   useEffect(() => {
   if(weather == 'Clear'){
@@ -27,10 +27,12 @@ const ChangeTempColor = ({ weather }) => {
     setImage(nieve)
   } else {
     console.log('no funciono, el clima es:', weather)
+    setImage(planeta)
   }
 }, [weather]);
 
   return <img className='main-image' src={image}></img>
+
 };
 
 export default ChangeTempColor

@@ -28,11 +28,18 @@ const SelectedCities = () => {
         <option value="Berlin">Berlín</option>
         <option value="London">Londres</option>
         <option value="Tokyo">Tokyo</option>
+        <option value="Oaxaca">Oaxaca</option>
+        <option value="Cairo">Cairo</option>
+        <option value="Acapulco">Acapuclo</option>
       </select>
       {latitude && longitude ?
         <>
+        <section>
           <ActualLocalWeather latitude={latitude} longitude={longitude} />
+          </section>
+          <section className='forecast'>
           <FiveDaysWeather latitude={latitude} longitude={longitude} />
+          </section>
         </> :
         <p>Cargando información...</p>}
     </>

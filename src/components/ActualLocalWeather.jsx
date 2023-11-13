@@ -13,6 +13,7 @@ const ActualLocalWeather = ({ latitude, longitude }) => {
         <div className='mainPage'>
           <h1>{Math.round(weatherData.main.temp)}C</h1>
           <h2>{weatherData.sys.country}: {weatherData.name}</h2>
+          <h2>{weatherData.weather[0].main}</h2>
           <ChangeTempColor weather={weatherData.weather[0].main} />
         </div>
         :
