@@ -48,7 +48,7 @@ nav{
 }
 .mainPage > h1{
   font-family: fedroka;
-  font-size: clamp(30vw, 50vw, 70vw);
+  font-size: clamp(30vw, 50vw, 60vw);
 }
 .main-image{
   position: absolute;

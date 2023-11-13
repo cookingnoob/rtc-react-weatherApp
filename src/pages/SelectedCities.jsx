@@ -24,7 +24,6 @@ const SelectedCities = () => {
   return (
     <>
     <div className="selectContainer">
-      
             <select name="City" onChange={handleSelect}>
               <option value="Madrid">Madrid</option>
               <option value="Paris">París</option>
