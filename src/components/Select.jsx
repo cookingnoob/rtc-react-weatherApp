@@ -3,7 +3,7 @@ const Select = ({ setCity }) => {
     setCity(event.target.value)
   }
   return (
-    <>
+    <div className="selectContainer">
       <select name="City" onChange={handleSelect}>
         <option value="Madrid">Madrid</option>
         <option value="Paris">París</option>
@@ -11,7 +11,7 @@ const Select = ({ setCity }) => {
         <option value="London">Londres</option>
         <option value="Tokyo">Tokyo</option>
       </select>
-    </>
+    </div>
 
   )
 

@@ -7,11 +7,10 @@ const Home = () => {
   return (
     <>
       {latitude && longitude ?
-        <>
-          <section>
-            <ActualLocalWeather latitude={latitude} longitude={longitude} />
-          </section>
-        </> :
+        <section>
+          <ActualLocalWeather latitude={latitude} longitude={longitude} />
+        </section>
+        :
         <p>{texto}</p>}
     </>
   )

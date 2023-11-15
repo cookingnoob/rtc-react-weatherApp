@@ -10,9 +10,9 @@ const SelectedForecast = () => {
     <>
       <Select setCity={setCity} />
       {latitude && longitude ?
-        <>
+        <section className='forecast'>
           <FiveDaysWeather latitude={latitude} longitude={longitude} />
-        </> :
+        </section> :
         <p>Cargando información...</p>}
     </>
   )

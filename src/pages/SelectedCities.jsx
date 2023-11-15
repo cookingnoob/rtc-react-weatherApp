@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import ActualLocalWeather from '../components/ActualLocalWeather';
-import FiveDaysWeather from '../components/FiveDaysWeather';
 import Select from '../components/Select';
 import useSelectLocation from '../hooks/useSelectLocation';
 
@@ -11,9 +10,11 @@ const SelectedCities = () => {
     <>
       <Select setCity={setCity} />
       {latitude && longitude ?
-        <>
+        <section>
+
           <ActualLocalWeather latitude={latitude} longitude={longitude} />
-        </> :
+
+        </section> :
         <p>Cargando información...</p>}
     </>
   )

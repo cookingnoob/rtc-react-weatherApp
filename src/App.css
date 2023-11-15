@@ -100,21 +100,20 @@ nav{
 }
 .selectContainer{
   position: fixed;
-  left: 50%;
-  top: 6%;
+  left: 45%;
+  top: 25%;
   z-index: 2;
   margin-bottom: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(240, 236, 236, 0.674);
+  background-color: transparent;
 }
 select{
   border: none;
   color: black;
-  font-size: clamp(30px, 1vw, 1vw);
-  background-color: rgba(240, 236, 236, 0.674);
-  margin-top: 5px;
+  font-size: clamp(50px, 1vw, 1vw);
+  background-color: rgba(240, 236, 236, 0);
 }
 select:hover{
   cursor: pointer;
