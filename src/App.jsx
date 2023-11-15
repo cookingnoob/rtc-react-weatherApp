@@ -7,11 +7,13 @@ import SelectedCities from './pages/SelectedCities';
 function App() {
   return (
     <>
-        <nav>
-          <NavLink to="" className={'navLink'}>Home</NavLink>
-          <br />
-          <NavLink to="select" className={'navLink'}>Selected cities</NavLink>
-        </nav>
+      <nav>
+        <NavLink to="" className={'navLink'}>Home</NavLink>
+        <br />
+        <NavLink to="forecast" className={'navLink'}>Local Forecast</NavLink>
+        <br />
+        <NavLink to="select" className={'navLink'}>Selected cities</NavLink>
+      </nav>
       <main>
         <Outlet />
       </main>

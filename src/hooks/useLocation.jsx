@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 
 const useLocation = () => {
-  const [latitude, setLatitude] = useState('')
-  const [longitude, setLongitude] = useState('')
+  const [latitude, setLatitude] = useState(null)
+  const [longitude, setLongitude] = useState(null)
   const [texto, setTexto] = useState('cargando tu ubicación...');
 
   useEffect(() => {

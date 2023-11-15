@@ -1,15 +1,15 @@
-import ActualLocalWeather from '../components/ActualLocalWeather'
+
+import FiveDaysWeather from '../components/FiveDaysWeather'
 import useLocation from '../hooks/useLocation'
 
-const Home = () => {
+const Forecast = () => {
   const { latitude, longitude, texto } = useLocation()
-
   return (
     <>
       {latitude && longitude ?
         <>
-          <section>
-            <ActualLocalWeather latitude={latitude} longitude={longitude} />
+          <section className='forecast'>
+            <FiveDaysWeather latitude={latitude} longitude={longitude} />
           </section>
         </> :
         <p>{texto}</p>}
@@ -17,4 +17,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Forecast

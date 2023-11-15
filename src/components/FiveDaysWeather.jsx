@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from 'react'
 import useAPI from '../hooks/useAPI'
-import ChangeTempColor from './ChangeTempColor'
 import planeta from '../assets/foto-default.png'
 
 const FiveDaysWeather = ({ latitude, longitude }) => {
@@ -10,8 +8,8 @@ const FiveDaysWeather = ({ latitude, longitude }) => {
   return (
     <>
       {weatherData ?
-       <>
-       <h1 className='forecastTitle'>{weatherData.city.name}</h1>
+        <>
+          <h1 className='forecastTitle'>{weatherData.city.name}</h1>
           <div className='fiveDaysContainer'>
             {weatherData.list.map(day => (
               <div key={day.dt} className='singleContainer'>
@@ -20,11 +18,11 @@ const FiveDaysWeather = ({ latitude, longitude }) => {
                 <p>{day.dt_txt.split(' ')[1].substring(0, 2)}</p>
                 <p>{Math.round(day.main.temp)}C</p>
               </div>
-          ))
-          }
+            ))
+            }
           </div>
-          <img src={planeta} alt="Planeta Tierra" className='forecastImg'/>
-           </>
+          <img src={planeta} alt="Planeta Tierra" className='forecastImg' />
+        </>
         : <p>{texto}</p>
       }
     </>
