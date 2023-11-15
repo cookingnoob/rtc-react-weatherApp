@@ -14,7 +14,7 @@ const FiveDaysWeather = ({ latitude, longitude }) => {
             {weatherData.list.map(day => (
               <div key={day.dt} className='singleContainer'>
                 <p>{new Date(day.dt_txt).toLocaleDateString('es-ES', { weekday: 'long' })}</p>
-                <img src={`http://openweathermap.org/img/w/${day.weather[0].icon}.png`} alt={day.weather[0].description} />
+                <img src={`https://openweathermap.org/img/w/${day.weather[0].icon}.png`} alt={day.weather[0].description} />
                 <p>{day.dt_txt.split(' ')[1].substring(0, 2)}</p>
                 <p>{Math.round(day.main.temp)}C</p>
               </div>
