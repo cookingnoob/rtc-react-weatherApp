@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import ActualLocalWeather from '../components/ActualLocalWeather';
 import FiveDaysWeather from '../components/FiveDaysWeather';
 import Select from '../components/Select';
@@ -10,11 +10,9 @@ const SelectedCities = () => {
   return (
     <>
       <Select setCity={setCity} />
-
       {latitude && longitude ?
         <>
           <ActualLocalWeather latitude={latitude} longitude={longitude} />
-          <FiveDaysWeather latitude={latitude} longitude={longitude} />
         </> :
         <p>Cargando información...</p>}
     </>

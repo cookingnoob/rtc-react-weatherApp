@@ -21,7 +21,3 @@ function App() {
 }
 
 export default App
-
-//conseguir la informacion de la api
-//render del la api del clima actual
-//render de la api de 5 dias de distancia

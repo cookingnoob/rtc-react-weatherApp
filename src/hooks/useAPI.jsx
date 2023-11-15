@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const useAPI = ({ latitude, longitude, url }) => {
   const [weatherData, setWeatherData] = useState(null);

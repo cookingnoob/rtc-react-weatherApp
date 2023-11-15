@@ -10,10 +10,7 @@ body{
 }
 nav{
   height: 10vh;
-  position: sticky;
-  top: 0;
   z-index: 2;
-  margin-bottom: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,6 +25,8 @@ nav{
 .navLink:hover{
   background-color: black;
   color: whitesmoke;
+  border-radius: 10px;
+  padding: 10px;
 }
 .mainPage{
   display: flex;
@@ -52,6 +51,7 @@ nav{
 }
 .main-image{
   position: absolute;
+  top: 10%;
   height: 90vh;
   width: 100%;
   opacity: 80%;
@@ -65,7 +65,7 @@ nav{
 }
 .forecastImg{
   position: absolute;
-  height: 100vh;
+  height: 90vh;
   width: 100vw;
   z-index: 0;
   opacity: 70%;
@@ -120,4 +120,8 @@ select:hover{
   cursor: pointer;
   background-color: black;
   color: whitesmoke;
+}
+.loadingText{
+  text-align: center;
+  font-size: 10vw;
 }

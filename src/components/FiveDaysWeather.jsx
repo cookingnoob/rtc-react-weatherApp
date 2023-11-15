@@ -30,8 +30,3 @@ const FiveDaysWeather = ({ latitude, longitude }) => {
 }
 
 export default FiveDaysWeather
-
-
-{/* <ChangeTempColor temp={Math.round(day.main.temp)} /> */ }
-{/* <p>{day.dt_txt.split(' ')[1].substring(0, 2)}</p> */ }
-{/* <p>{Math.round(day.main.temp)}ºC</p> */ }
