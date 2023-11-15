@@ -3,7 +3,7 @@ import planeta from '../assets/foto-default.png'
 
 const FiveDaysWeather = ({ latitude, longitude }) => {
 
-  const { weatherData, texto } = useAPI({ url: 'http://api.openweathermap.org/data/2.5/forecast?', latitude, longitude })
+  const { weatherData, texto } = useAPI({ url: 'https://api.openweathermap.org/data/2.5/forecast?', latitude, longitude })
 
   return (
     <>
