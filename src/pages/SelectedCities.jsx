@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import ActualLocalWeather from '../components/ActualLocalWeather';
 import FiveDaysWeather from '../components/FiveDaysWeather';
-
+import Select from '../components/Select';
 
 const SelectedCities = () => {
   const [city, setCity] = useState('Madrid')
@@ -23,26 +23,12 @@ const SelectedCities = () => {
   }
   return (
     <>
-    <div className="selectContainer">
-            <select name="City" onChange={handleSelect}>
-              <option value="Madrid">Madrid</option>
-              <option value="Paris">París</option>
-              <option value="Berlin">Berlín</option>
-              <option value="London">Londres</option>
-              <option value="Tokyo">Tokyo</option>
-              <option value="Oaxaca">Oaxaca</option>
-              <option value="Cairo">Cairo</option>
-              <option value="Acapulco">Acapuclo</option>
-            </select>
-    </div>
+      <Select setCity={setCity} />
+
       {latitude && longitude ?
         <>
-        <section>
           <ActualLocalWeather latitude={latitude} longitude={longitude} />
-          </section>
-          <section className='forecast'>
           <FiveDaysWeather latitude={latitude} longitude={longitude} />
-          </section>
         </> :
         <p>Cargando información...</p>}
     </>
