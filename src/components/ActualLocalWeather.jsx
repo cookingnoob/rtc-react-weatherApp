@@ -18,6 +18,8 @@ const ActualLocalWeather = ({ latitude, longitude }) => {
           <div className="extra-data">
             <p>Amanece: {sunRise}</p>
             <p>Atardecer: {sunSet}</p>
+            <p>Humedad: {weatherData.main.humidity}</p>
+            <img src={`https://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`} alt={weatherData.weather[0].description} />
           </div>
           <ChangeTempColor weather={weatherData.weather[0].main} />
         </>

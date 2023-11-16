@@ -55,6 +55,15 @@ nav{
   width: 100%;
   opacity: 80%;
 }
+.extra-data{
+  z-index: 1;
+  display: flex;
+  gap: 3vw;
+  padding: 5vw;
+}
+.extra-data > p {
+  font-size: clamp(12px,1vw, 1.5vw ) ;
+}
 .forecast{
   height: 90vh;
   display: flex;
