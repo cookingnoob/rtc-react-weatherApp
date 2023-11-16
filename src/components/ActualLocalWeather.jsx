@@ -3,13 +3,20 @@ import ChangeTempColor from './ChangeTempColor'
 
 const ActualLocalWeather = ({ latitude, longitude }) => {
   const { weatherData, texto } = useAPI({ url: 'https://api.openweathermap.org/data/2.5/weather?', latitude, longitude })
+  
+  let sunRise;
 
+  weatherData ?  sunRise = new Date(weatherData.sys.sunrise * 1000).toLocaleTimeString() : console.log('hola')
+  
   return (
     <div className='mainPage'>
       {weatherData ?
         <>
           <h1>{Math.round(weatherData.main.temp)}</h1>
           <h2>{weatherData.sys.country}: {weatherData.name}</h2>
+          <div className="extra-data">
+            <p>Amanece: {sunRise.slice(0, 5)}</p>
+          </div>
           <ChangeTempColor weather={weatherData.weather[0].main} />
         </>
         :

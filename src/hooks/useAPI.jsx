@@ -11,6 +11,7 @@ const useAPI = ({ latitude, longitude, url }) => {
       try {
         const response = await fetch(`${url}lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`);
         const data = await response.json()
+        console.log(data)
         setWeatherData(data)
       } catch (error) {
         console.log(error)

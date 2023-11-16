@@ -16,6 +16,7 @@ function App() {
       <main>
         <Outlet />
       </main>
+      <footer>by Alan Coste</footer>
     </>
   )
 }
