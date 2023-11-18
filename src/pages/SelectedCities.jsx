@@ -8,14 +8,20 @@ const SelectedCities = () => {
   const { latitude, longitude } = useSelectLocation({ city })
   return (
     <>
-      <Select setCity={setCity} />
+      
       {latitude && longitude ?
+      <>
+      <Select setCity={setCity} />
         <section>
-
           <ActualLocalWeather latitude={latitude} longitude={longitude} />
-
-        </section> :
-        <p>Cargando información...</p>}
+        </section> 
+        </>
+        :
+        <>
+        <p className='loadingText'>Texto pagina select, no es del hook</p>
+        <div className="loader"></div>
+        </>
+        }
     </>
   )
 }

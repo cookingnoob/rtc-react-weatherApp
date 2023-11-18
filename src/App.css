@@ -20,7 +20,7 @@ nav{
 .navLink{
   text-decoration: none;
   color: black;
-  font-size: clamp(20px, 1vw, 1.5vw);
+
 }
 .navLink:hover{
   background-color: black;
@@ -47,7 +47,7 @@ nav{
 }
 .mainPage > h1{
   font-family: fedroka;
-  font-size: clamp(10vw, 30vw, 40vw);
+
 }
 .main-image{
   position: absolute;
@@ -58,18 +58,20 @@ nav{
 .extra-data{
   z-index: 1;
   display: flex;
-  gap: 3vw;
-  padding: 5vw;
+  gap: 5vw;
+  background-color: rgba(245, 245, 245, 0.282);
+  border-radius: 10px;
 }
 .extra-data > p {
-  font-size: clamp(12px,1vw, 1.5vw ) ;
+ font-size: 20px;
 }
 .forecast{
   height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
+  gap: 2vh;
 }
 .forecastImg{
   position: absolute;
@@ -79,11 +81,9 @@ nav{
   opacity: 70%;
 }
 .forecastTitle{
-  font-size: 10vw;
   z-index: 1;
   margin: 0;
 }
-
 .fiveDaysContainer{
   height: 30vh;
   width: 70vw;
@@ -108,6 +108,7 @@ nav{
 }
 .selectContainer{
   position: fixed;
+  top: 30%;
   background-color: transparent;
   width: 100vw;
   display: flex;
@@ -118,7 +119,7 @@ nav{
 select{
   border: none;
   color: black;
-  font-size: clamp(50px, 1vw, 1vw);
+  font-size: 20px;
   background-color: rgba(255, 255, 255, 0.273);
 }
 select:hover{
@@ -127,12 +128,33 @@ select:hover{
   color: whitesmoke;
 }
 .loadingText{
+  position: relative;
   text-align: center;
-  font-size: 10vw;
+  font-size: 20px;
+  height: 85vh;
+
 }
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+}
+
 footer{
   height: 5vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color:  rgba(240, 236, 236, 0.674);;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

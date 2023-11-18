@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 const useLocation = () => {
   const [latitude, setLatitude] = useState(null)
   const [longitude, setLongitude] = useState(null)
-  const [texto, setTexto] = useState('cargando tu ubicación...');
+  const [texto, setTexto] = useState('useLocation...');
 
   useEffect(() => {
     const success = (position) => {

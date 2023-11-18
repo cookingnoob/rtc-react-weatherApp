@@ -11,7 +11,11 @@ const Forecast = () => {
           <FiveDaysWeather latitude={latitude} longitude={longitude} />
         </section>
         :
-        <p>{texto}</p>}
+        <>
+        <p className='loadingText'>{texto}</p>
+        <div className="loader"></div>
+        </>
+        }
     </>
   )
 }

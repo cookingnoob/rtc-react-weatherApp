@@ -8,12 +8,20 @@ const SelectedForecast = () => {
   const { latitude, longitude } = useSelectLocation({ city })
   return (
     <>
-      <Select setCity={setCity} />
+     
       {latitude && longitude ?
+      <>
+       <Select setCity={setCity} />
         <section className='forecast'>
           <FiveDaysWeather latitude={latitude} longitude={longitude} />
-        </section> :
-        <p>Cargando información...</p>}
+        </section> 
+        </>
+        :
+        <>
+        <p className='loadingText'>Texto pagina select, no es del hook.</p>
+        <div className="loader"></div>
+        </>
+        }
     </>
   )
 }
