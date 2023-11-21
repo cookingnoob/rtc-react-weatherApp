@@ -113,7 +113,7 @@ nav{
 }
 .selectContainer{
   position: fixed;
-  top: 30%;
+  top: 5%;
   background-color: transparent;
   width: 100vw;
   display: flex;
