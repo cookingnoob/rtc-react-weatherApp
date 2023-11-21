@@ -23,7 +23,11 @@ const FiveDaysWeather = ({ latitude, longitude }) => {
           </div>
           <img src={planeta} alt="Planeta Tierra" className='forecastImg' />
         </>
-        : <p>{texto}</p>
+        :
+        <>
+        <p>{texto}</p>
+        <div className="loader"></div>
+        </>
       }
     </>
   )

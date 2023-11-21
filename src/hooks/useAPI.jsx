@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 
 const useAPI = ({ latitude, longitude, url }) => {
   const [weatherData, setWeatherData] = useState(null);
-  const [texto, setTexto] = useState('useAPI');
+  const [texto, setTexto] = useState('Obteniendo información');
 
   const API_KEY = '5a8c226189094d71c9d4cdd8e366f881';
 

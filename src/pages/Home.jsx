@@ -2,7 +2,7 @@ import ActualLocalWeather from '../components/ActualLocalWeather'
 import useLocation from '../hooks/useLocation'
 
 const Home = () => {
-  const { latitude, longitude, texto } = useLocation()
+  const { latitude, longitude, error } = useLocation()
 
   return (
     <>
@@ -12,7 +12,7 @@ const Home = () => {
         </section>
         :
         <>
-        <p className='loadingText'>{texto}</p>
+        <p className='loadingText'>{error}</p>
         <div className="loader"></div>
         </>
       }
